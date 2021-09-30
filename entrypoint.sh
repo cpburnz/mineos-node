@@ -12,7 +12,7 @@ if [[ ! -f /root/password ]]; then
     echo 'Password set to: ' $USER_PASSWORD > /root/password
 
   fi
-  else
+else
   echo >&2 "Password already set by entrypoint.sh, at /root/password"
   cat /root/password
 fi
@@ -73,8 +73,10 @@ else
   echo >&2 "Created user: $USER_NAME (uid: $USER_UID, gid: $GROUP_GID)"
 fi
 
-echo >&2 "Setting user password for '$USER_NAME'"
-echo "$USER_NAME:$USER_PASSWORD" | chpasswd
+if [ ! -z "$USER_PASSWORD" ]; then
+  echo >&2 "Setting user password for '$USER_NAME'"
+  echo "$USER_NAME:$USER_PASSWORD" | chpasswd
+fi
 
 if [ ! -z "$USE_HTTPS" ]; then
   # update mineos.conf from environment
