@@ -1,7 +1,7 @@
 [program:mineos]
 command=/usr/games/minecraft/run_webui.sh
 directory=/usr/games/minecraft
-environment=HOME=/root,USER_NAME=%(ENV_USER_NAME)
+environment=HOME=/root,USER_NAME=%(ENV_USER_NAME)s
 user=root
 autostart=true
 autorestart=true
