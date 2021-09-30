@@ -10,7 +10,7 @@
 #
 
 # Trap on SIGTERM to shutdown Minecraft servers.
-trap 'sudo -u "$USER_NAME" /usr/games/minecraft/shutdown_servers.sh' SIGTERM
+trap 'sudo -u "$USER_NAME" /usr/games/minecraft/shutdown_servers.sh' TERM
 
 # Run webui.
 /usr/games/minecraft/webui.js
