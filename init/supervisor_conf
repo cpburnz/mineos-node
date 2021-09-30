@@ -5,4 +5,5 @@ environment=HOME=/root,USER_NAME=%(ENV_USER_NAME)s
 user=root
 autostart=true
 autorestart=true
+stopwaitsecs=600
 redirect_stderr=true
