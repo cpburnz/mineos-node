@@ -73,7 +73,7 @@ else
   echo >&2 "Created user: $USER_NAME (uid: $USER_UID, gid: $GROUP_GID)"
 fi
 
-if [ "$USER_PASSWORD" ]; then
+if [ "$USER_PASSWORD" ] && [ "$USER_PASSWORD" != "random_see_log" ]; then
   echo >&2 "Setting user password for '$USER_NAME'"
   echo "$USER_NAME:$USER_PASSWORD" | chpasswd
 fi
