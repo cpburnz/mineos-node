@@ -2,10 +2,8 @@ version: '3'
 
 services:
   mineos:
-    image: hexparrot/mineos:latest
+    image: mineos
     container_name: mineos_server
-    networks:
-      - mineos
     restart: unless-stopped
 
     # Adjust as needed; if this is too short, stopping the container
@@ -59,6 +57,3 @@ services:
 
 volumes:
   mineos_data:
-
-networks:
-  mineos:

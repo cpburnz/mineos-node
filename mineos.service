@@ -1,0 +1,25 @@
+#
+# This Systemd service (unit) runs the MineOS container with Docker.
+#
+# Authors: Caleb P. Burns
+# Created: 2021-09-29
+# Updated: 2021-09-29
+#
+
+[Unit]
+Description=MineOS Container
+After=docker.service network-online.target
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/docker start mineos_server
+ExecStart=/usr/bin/docker logs -f mineos_server
+ExecStop=/usr/bin/docker stop mineos_server
+ExecStopPost=-/usr/bin/docker stop mineos_server
+Restart=always
+TimeoutStartSec=60
+
+[Install]
+WantedBy=multi-user.target
