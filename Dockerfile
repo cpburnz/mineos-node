@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y \
   openjdk-16-jre-headless \
   openjdk-8-jre-headless \
   ca-certificates-java \
+  python3-minimal \
   sudo \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -23,6 +24,7 @@ RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #download mineos from github
+ADD https://api.github.com/repos/cpburnz/mineos-node/git/refs/heads/master mineos-node.json
 RUN mkdir /usr/games/minecraft \
   && cd /usr/games/minecraft \
   && git clone --depth=1 https://github.com/cpburnz/mineos-node.git . \
