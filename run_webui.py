@@ -22,6 +22,7 @@ def on_sigterm(signum: int, frame) -> None:
 	Called when a SIGTERM is occurs.
 	"""
 	subprocess.run(["sudo", "-u", os.environ['USER_NAME'], "/usr/games/minecraft/shutdown_servers.sh"])
+	sys.exit(-signum)
 
 
 def main(argv: List[str]) -> int:
