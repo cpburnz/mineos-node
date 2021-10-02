@@ -29,7 +29,7 @@ RUN mkdir /usr/games/minecraft \
   && cd /usr/games/minecraft \
   && git clone --depth=1 https://github.com/cpburnz/mineos-node.git . \
   && cp mineos.conf /etc/mineos.conf \
-  && chmod +x webui.js mineos_console.js service.js run_webui.sh shutdown_servers.sh
+  && chmod +x webui.js mineos_console.js service.js run_webui.py shutdown_servers.sh
 
 #build npm deps and clean up apt for image minimalization
 RUN cd /usr/games/minecraft \
