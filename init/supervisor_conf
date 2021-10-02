@@ -1,5 +1,5 @@
 [program:mineos]
-command=/usr/games/minecraft/run_webui.sh
+command=/usr/games/minecraft/run_webui.py
 directory=/usr/games/minecraft
 environment=HOME=/root,USER_NAME=%(ENV_USER_NAME)s
 user=root
