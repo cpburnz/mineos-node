@@ -7,12 +7,13 @@ stopped. Upon stop, any running Minecraft servers will be properly shutdown.
 
 __authors__ = ["Caleb P. Burns"]
 __created__ = "2021-09-29"
-__updated__ = "2021-10-01"
+__updated__ = "2021-10-02"
 
 import argparse
 import os
 import signal
 import subprocess
+import sys
 from typing import List
 
 
